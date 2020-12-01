@@ -13,3 +13,9 @@ ESP32 development board –  read ESP32 Development Boards Review and Comparison
 Breadboard
 Jumper wires
 
+
+Schematic
+Start by building the circuit. Connect two LEDs to the ESP32 as shown in the following schematic diagram – one LED connected to GPIO 26, and the other to GPIO 27.
+
+Note: We’re using the ESP32 DEVKIT DOIT board with 36 pins. Before assembling the circuit, make sure you check the pinout for the board you’re using.
+

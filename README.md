@@ -4,3 +4,12 @@ The web server you’ll build controls two LEDs connected to the ESP32 GPIO 26 a
 You can access the ESP32 web server by typing the ESP32 IP address on a browser in the local network;
 By clicking the buttons on your web server you can instantly change the state of each LED.
 This is just a simple example to illustrate how to build a web server that controls outputs, the idea is to replace those LEDs with a relay, or any other electronic components you want.
+
+
+![alt](components.jpg)
+ESP32 development board –  read ESP32 Development Boards Review and Comparison
+2x 5mm LED
+2x 330 Ohm resistor
+Breadboard
+Jumper wires
+

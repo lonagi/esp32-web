@@ -61,4 +61,15 @@ void loop(){
     previousTime = currentTime;
     Serial.println("New Client.");
     String currentLine = "";
+    // loop while the client's connected
+    while (client.connected() && currentTime - previousTime <= timeoutTime) {
+      currentTime = millis();
+
+      // if there's bytes to read from the client,
+      if (client.available()) {             
+        char c = client.read();             
+        Serial.write(c);                    
+        header += c;
+        if (c == '\n') {      
+
 }

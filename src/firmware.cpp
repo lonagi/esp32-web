@@ -54,4 +54,11 @@ void setup() {
 void loop(){
   // Listen for incoming clients
   WiFiClient client = server.available();
+
+  // If a new client connects,
+  if (client) {                             
+    currentTime = millis();
+    previousTime = currentTime;
+    Serial.println("New Client.");
+    String currentLine = "";
 }

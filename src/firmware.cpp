@@ -61,6 +61,7 @@ void loop(){
     previousTime = currentTime;
     Serial.println("New Client.");
     String currentLine = "";
+
     // loop while the client's connected
     while (client.connected() && currentTime - previousTime <= timeoutTime) {
       currentTime = millis();
@@ -72,4 +73,15 @@ void loop(){
         header += c;
         if (c == '\n') {      
 
+          // if the byte is a newline character
+          // if the current line is blank, you got two newline characters in a row.
+          // that's the end of the client HTTP request, so send a response:
+          if (currentLine.length() == 0) {
+
+            // HTTP headers always start with a response code (e.g. HTTP/1.1 200 OK)
+            // and a content-type so the client knows what's coming, then a blank line:
+            client.println("HTTP/1.1 200 OK");
+            client.println("Content-type:text/html");
+            client.println("Connection: close");
+            client.println();
 }
